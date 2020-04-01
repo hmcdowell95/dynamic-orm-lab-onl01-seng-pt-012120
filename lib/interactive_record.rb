@@ -60,8 +60,8 @@ class InteractiveRecord
       a << k.to_s
       b << v
     end
-    sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
-    DB[:conn].execute(sql, a.join, b.join)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{a.join} = ?"
+    DB[:conn].execute(sql, b.join)
   end
 
 end
