@@ -53,10 +53,10 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
   
-  def self.find_by(k: v)
+  def self.find_by(v)
     binding.pry
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
-    DB[:conn].execute(sql, k.to_s, v)
+    DB[:conn].execute(sql, v)
   end
 
 end
