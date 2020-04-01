@@ -55,7 +55,7 @@ class InteractiveRecord
   
   def self.find_by(k: v)
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
-    DB[:conn].execute(sql, )
+    DB[:conn].execute(sql, k.to_s, v)
   end
 
 end
